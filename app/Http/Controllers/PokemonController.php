@@ -26,10 +26,10 @@ class PokemonController extends Controller
 
     public function index()
     {
-        // $pokemon = $this->pokemon;
-        // $pokemon = $pokemon->with('sprites')->paginate(50);
-        // return $pokemon;
-        return Pokemon::with('sprites')->get();
+        $pokemon = $this->pokemon;
+        $pokemon = $pokemon->with('sprites')->paginate(25);
+        return $pokemon;
+        // return Pokemon::with('sprites')->get(); // if pagination not work un comment this and change index.vue file props data to pokemon
     }
 
     public function delete($id)
